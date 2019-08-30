@@ -3,7 +3,7 @@
 ## Linux 基本操作
 
 ```
-基本掌握cd cp scp ssh ifconfig grep find awk sed apt vim uedv nmcli zip unzip tar adb ps top ls 等基本命令操作 
+基本掌握cd cp scp ssh ifconfig grep find awk sed apt vim uedv nmcli zip unzip tar adb ps top ls du df free 等基本命令操作 
 ```
 
 ## Git 工具使用
