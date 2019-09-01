@@ -7,21 +7,22 @@ class A
 {
   public:
     int a;
-    A(){
+    A()
+    {
       a1=1;
       a2=2;
       a3=3;
-      a=4;}
-   int fun()
-  {
-    cout<<a<<endl;
-    cout<<a1<<endl;
-    cout<<a2<<endl;
-    cout<<a3<<endl;
-  
-    return 1;
-   
- }
+      a=4;
+    }
+    int fun()
+    {
+      cout<<a<<endl;
+      cout<<a1<<endl;
+      cout<<a2<<endl;
+      cout<<a3<<endl;
+    
+      return 1;
+   }
 
   public:
     int a1;
@@ -31,7 +32,7 @@ class A
     int a3;
 };
 
-class B : private A
+class B : public A
 {
   public:
     int a;
@@ -39,25 +40,25 @@ class B : private A
     A();
     a=i;}
 
-  void fun()
-  {
-    cout<<a<<endl;
-    cout<<a1<<endl;
-    cout<<a2<<endl;
-  // cout<<a3<<endl;
-  }
+    void fun()
+    {
+      cout<<a<<endl;
+      cout<<a1<<endl;
+      cout<<a2<<endl;
+//       cout<<a3<<endl;
+    }
 };
 
 int main()
 {
   B b(10);
   cout<<b.a<<endl;
-  //cout<<b.a1<<endl;
-  //cout<<b.a2<<endl;
-  //cout<<b.a3<<endl;
+//  cout<<b.a1<<endl;
+//  cout<<b.a2<<endl;
+//  cout<<b.a3<<endl;
   
-  b.fun();
-  cout<<b.A::fun();
+  int result = b.A::fun(); 
+  cout << result << endl;
 
   return 0;
 }
