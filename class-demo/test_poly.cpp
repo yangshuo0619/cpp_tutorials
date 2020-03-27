@@ -46,15 +46,15 @@ class Triangle: public Shape
 
 int main()
 {
- // Shape shape;
+ //Shape & shape;
   Rectangle rec(10,7);
   Triangle tri(10,5);
 
   Shape & shape=rec;
   cout<<shape.area()<<endl;
 
-  Shape & shape1=tri;
-  cout<<shape1.area()<<endl;
+  shape=tri;
+  cout<<shape.area()<<endl;
 
   return 0;
 

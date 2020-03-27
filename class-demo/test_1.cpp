@@ -9,16 +9,40 @@ namespace jzy
     
     int width;
     int height;
+    Size();
     Size(double width,double height);    
     ~Size();
     
    Size operator+(const Size& s)
    {
-    Size size(0,0);
+    Size size;
     size.width=this->width+s.width;
     size.height=this->height+s.height;
     return size;
-   
+   }
+
+   Size operator-(const Size& s)
+   {
+    Size size;
+    size.width=this->width-s.width;
+    size.height=this->height-s.height;
+    return size;
+   }
+
+    Size operator*(const Size& s)
+   {
+    Size size;
+    size.width=this->width*s.width;
+    size.height=this->height*s.height;
+    return size;
+   }
+
+    Size operator/(const Size& s)
+   {
+    Size size;
+    size.width=this->width/s.width;
+    size.height=this->height/s.height;
+    return size;
    }
 
   friend std::ostream &operator<<(std::ostream &os, const Size &size){
@@ -26,6 +50,9 @@ namespace jzy
 
   };
   
+  Size::Size()
+  {
+  }
 
   Size::Size(double wid,double hei)
   {
@@ -51,7 +78,10 @@ int main()
   Size b(10,10);
   cout<<b<<endl; 
   
-  std::cout<<a+b<<endl;
+  cout<<a+b<<endl;
+  cout<<a-b<<endl;
+  cout<<a*b<<endl;
+  cout<<a/b<<endl;
 
   return 0;
 
