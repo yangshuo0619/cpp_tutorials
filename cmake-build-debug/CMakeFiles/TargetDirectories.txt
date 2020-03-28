@@ -1,3 +1,0 @@
-/home/mynt/git-test/cpp_tutorials/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/mynt/git-test/cpp_tutorials/cmake-build-debug/CMakeFiles/cpp_tutorials.dir
-/home/mynt/git-test/cpp_tutorials/cmake-build-debug/CMakeFiles/edit_cache.dir
