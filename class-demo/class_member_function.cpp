@@ -33,6 +33,7 @@ void Box::setBreadth(double bre)
 void Box::setHeight(double hei)
 {
 	height=hei;
+
 };
 
 
@@ -51,6 +52,7 @@ int main()
 	b.setHeight(10.0);
 
 	v=a.getVolume();
+
 	cout<<"a volume="<<v<<endl;
 	 
 	v=b.getVolume();

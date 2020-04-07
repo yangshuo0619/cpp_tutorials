@@ -30,7 +30,7 @@ int main()
 
   box.setSmallWidth(5.0);
   cout<<"width of box:"<<box.getSmallWidth()<<endl;
-
+  
   return 0;
 }
 

@@ -7,12 +7,12 @@ class Shape
   public:
     void setWidth(int w)
     {
-      width=w;
+      width = w;
     }
 
     void setHeight(int h)
     {
-      height=h;
+      height = h;
     }
    
   protected:
@@ -26,7 +26,7 @@ class Rectangle: public Shape
   public:
     int getArea()
       {
-        return (width*height);
+        return (width * height);
       }
 };
 
@@ -36,7 +36,7 @@ int main(void)
   Rect.setWidth(5);
   Rect.setHeight(10);
   
-  cout<<"total area: "<<Rect.getArea()<<endl;
+  cout << "total area:  " << Rect.getArea() << endl;
  
   return 0;
 

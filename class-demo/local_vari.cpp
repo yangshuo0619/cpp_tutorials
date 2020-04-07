@@ -7,11 +7,11 @@ int main()
   int a,b;
   int c;
 
-  a=10;
-  b=2;
-  c=a+b;
+  a = 10;
+  b = 2;
+  c = a + b;
 
-  cout<<c;
+  cout << c;
 
   return 0;
 

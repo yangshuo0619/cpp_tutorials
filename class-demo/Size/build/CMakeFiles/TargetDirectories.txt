@@ -1,0 +1,3 @@
+/home/mynt/git-test/cpp_tutorials/class-demo/Size/build/CMakeFiles/rebuild_cache.dir
+/home/mynt/git-test/cpp_tutorials/class-demo/Size/build/CMakeFiles/edit_cache.dir
+/home/mynt/git-test/cpp_tutorials/class-demo/Size/build/CMakeFiles/Size.dir

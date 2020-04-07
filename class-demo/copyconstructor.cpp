@@ -21,17 +21,20 @@ Line::Line(int len)
     // 为指针分配内存
     ptr = new int;
     *ptr = len;
-    cout<<ptr<<endl;
-    cout<<*ptr<<endl;
+    cout << "new address :" << ptr << endl;
+    cout << *ptr << endl;
 }
  
 Line::Line(const Line &obj)
 {
-    cout << "调用拷贝构造函数并为指针 ptr 分配内存" << endl;
+    cout << "调用拷贝构造函数 init new object,并为指针 ptr 分配内存" << endl;
     ptr = new int;
     *ptr = *obj.ptr; // 拷贝值
-    cout<<"obj ptr: "<<ptr<<endl;
-    cout<<"obj *ptr: "<<*ptr<<endl;
+    cout<<"new ptr: "<<ptr<<endl;
+    cout<<"new *ptr: "<<*ptr<<endl;
+   
+    cout << "old ptr: " << obj.ptr << endl;
+    cout << "old *ptr: " << * obj.ptr <<endl;
 }
  
 Line::~Line(void)
@@ -55,13 +58,14 @@ void display(Line obj)
 int main( )
 {
    Line line(10);
+   Line line2(line);
    
-   cout<<"^^^^"<<endl;   
+   cout<<"^^^^^^^^^^^^"<<endl;   
  
-
+   
    display(line);
  
-   cout<<"line.ptr:"<<line.ptr<<endl;
+//    cout<<"line.ptr:"<<line.ptr<<endl;
   // cout<<obj.ptr<<endl;
 
 

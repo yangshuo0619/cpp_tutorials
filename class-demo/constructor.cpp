@@ -33,6 +33,7 @@ int main()
   Line line;
  
   line.setLength(50.0);
+  
   cout<<"length of line:"<< line.getLength()<<endl;
  
   return 0;

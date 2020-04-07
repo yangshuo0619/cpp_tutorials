@@ -8,16 +8,16 @@ class A
   public:
     int a;
     A(){
-      a1=1;
-      a2=2;
-      a3=3;
-      a=4;}
+      a1 = 1;
+      a2 = 2;
+      a3 = 3;
+      a = 4;}
    void fun()
   {
-    cout<<a<<endl;
-    cout<<a1<<endl;
-    cout<<a2<<endl;
-    cout<<a3<<endl;
+    cout << a << endl;
+    cout << a1 << endl;
+    cout << a2 << endl;
+    cout << a3 << endl;
     }
 
   public:
@@ -34,26 +34,30 @@ class B : private A
     int a;
     B(int i){
     A();
-    a=i;}
+    a = i;}
 
-  void fun()
+  
+  void fun1()
   {
-    cout<<a<<endl;
-    cout<<a1<<endl;
-    cout<<a2<<endl;
-  // cout<<a3<<endl;
+    cout << a << endl;
+    cout << a1 << endl;
+    cout << a2 << endl;
+  // cout << a3 << endl;
   }
+  
 };
 
 int main()
 {
   B b(10);
-  cout<<b.a<<endl;
-  //cout<<b.a1<<endl;
-  //cout<<b.a2<<endl;
-  //cout<<b.a3<<endl;
+  cout << b.a << endl;
   
-  b.fun();
+  //cout << b.a1 << endl;
+  //cout << b.a2 << endl;
+  //cout << b.a3 <<endl;
+
+  //b.fun();
+  b.fun1();
 
   return 0;
 }

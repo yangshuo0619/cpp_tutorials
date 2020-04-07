@@ -24,6 +24,7 @@ int main()
 {
   Box box;
   box.setWidth(10);
+  //cout << box.width << endl;
   printWidth(box);
 
   return 0;

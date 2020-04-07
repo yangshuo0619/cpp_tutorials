@@ -2,18 +2,20 @@
 
 using namespace std;
 
-int g;
+//global variable
+int g=1;
 
 int main()
 {
   int a,b;
- // int c;
 
-  a=10;
-  b=2;
-  g=a+b;
+  cout << g << endl;
 
-  cout<<g;
+  a = 10;
+  b = 2;
+  g = a + b;
+
+  cout << g;
 
   return 0;
 

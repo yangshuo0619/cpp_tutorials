@@ -13,7 +13,6 @@ class Box
 };
 
 void Box::setWidth(double wid)
-
 {
   width=wid;
 }
@@ -25,14 +24,14 @@ double Box::getWidth(void)
 
 int main()
 {
-  Box box;
- // box.width=4;
- // cout<<"box.width "<<box.width<<endl;
+    Box box;
+  //box.width=4;
+  //cout<<"box.width "<<box.width<<endl;
 
-  box.setWidth(9);
- // cout<<"box.width "<<box.width<<endl
-  cout<<"box.getWidth "<<box.getWidth()<<endl;
+    box.setWidth(9);
+    //cout<<"box.width "<<box.width<<endl;
+    cout<<"box.getWidth "<<box.getWidth()<<endl;
 
-  return 0;
+    return 0;
 }
 

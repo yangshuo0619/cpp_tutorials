@@ -29,12 +29,13 @@ class PaintCost
     }
 };
 
+
 class Rectangle : public Shape, public PaintCost
 {
   public:
     int getArea()
     {
-      return (width*height);
+      return (width * height);
     }
 };
 
@@ -46,11 +47,11 @@ int main(void)
   Rect.setWidth(9);
   Rect.setHeight(8);
   
-  area=Rect.getArea();
+  area = Rect.getArea();
 
-  cout<<"total area: "<<area<<endl;
+  cout << "total area: " << area << endl;
 
-  cout<<"total cost: "<<Rect.getCost(area)<<endl;
+  cout << "total cost: " << Rect.getCost(area) << endl;
 
   return 0;
 
