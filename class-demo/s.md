@@ -1,0 +1,113 @@
+配置opencv工程库：  setx -m OPENCV_DIR  C:\Users\jiziy\software\opencv\build\x64\vc15\lib
+
+
+using 的使用
+1、命名空间的使用
+
+一般为了代码的冲突，都会用命名空间。例如，对于Android代码会使用Android作为命名空间。
+
+namespace android;
+
+2、在子类中引用基类的成员
+
+class T5Base {
+public:
+    T5Base() :value(55) {}
+    virtual ~T5Base() {}
+    void test1() { cout << "T5Base test1..." << endl; }
+protected:
+    int value;
+};
+ 
+class T5Derived : private T5Base {
+public:
+    //using T5Base::test1;
+    //using T5Base::value;
+    void test2() { cout << "value is " << value << endl; }
+};
+
+3、别名指定
+在C++11中提出了通过using指定别名。
+
+
+
+
+std::function<void()> f = gFunc;
+std::function<int(int) f = gFunc1;  int(int)  外部返回值是int型，内部参数是int型。
+
+
+
+mynt@mynt-TM1701:~/git-test/cpp_tutorials/demo$ g++ functional.cpp 
+functional.cpp: In function ‘int main()’:
+functional.cpp:13:5: error: ‘function’ is not a member of ‘std’
+使用下面此给g++ c++11去编译：
+g++ -g -Wall -std=c++11 functional.cpp 
+
+
+
+std::unique_ptr
+1） 任意时刻unique_ptr只能指向某一个对象，指针销毁时，指向的对象也会被删除（通过内置删除器，通过调用析构函数实现删除对象）
+2）禁止拷贝和赋值（底层实现拷贝构造函数和复制构造函数 = delete），可以使用std::move()、unique_ptr.reset(...) 转移对象指针控制权。
+
+头文件为#include<memory>
+    // 创建一个unique_ptr实例
+    unique_ptr<int> pInt(new int(5));
+    cout << *pInt;
+
+
+
+
+git 删除远程分支文件
+
+git删除远程分支包括两种情况：
+（1）仅仅删除远程分支文件，不删除本地的文件；
+（2）删除远程分支文件的同时，删除本地的文件。
+
+1. 仅仅删除远程分支文件，不删除本地文件
+
+删除远程文件filename
+
+git rm --cached filename
+git commit -m "delete remote file filename "
+git push -u oringin master(此处是当前分支的名字)
+
+  
+删除远程文件夹directoryname
+
+git rm -r --cached directoryname
+git commit -m "delete remote directory directoryname "
+git push -u oringin master(此处是当前分支的名字)
+
+
+2. 删除本地文件与远程分支文件
+
+删除文件filename
+
+git rm filename
+git commit -m "delete file filename "
+git push -u oringin master(此处是当前分支的名字)
+
+  
+删除文件夹directoryname
+
+git rm -r directoryname
+git commit -m "delete directory directoryname "
+git push -u oringin master(此处是当前分支的名字)
+
+
+类型限定符
+const	const 类型的对象在程序执行期间不能被修改改变。
+volatile	修饰符 volatile 告诉编译器不需要优化volatile声明的变量，让程序可以直接从内存中读取变量。对于一般的变量编译器会对变量进行优化，将内存中的变量值放在寄存器中以加快读写效率。
+restrict	由 restrict 修饰的指针是唯一一种访问它所指向的对象的方式。只有 C99 增加了新的类型限定符 restrict。
+
+
+存储类定义 C++ 程序中变量/函数的范围（可见性）和生命周期。
+
+C++ 程序中可用的存储类：
+
+    auto
+    register
+    static
+    extern
+    mutable
+    thread_local (C++11)

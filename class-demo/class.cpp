@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//类可以定义为 描述对象行为/状态的模板/蓝图。
 class Box
 {
   public:
@@ -17,9 +18,11 @@ int main()
   Box b;
   double volume = 0.0;
  
+
   a.height = 5.0;
   a.breadth = 6.0;
   a.length = 7.0;
+
 
   b.height = 10.0;
   b.breadth = 13.0;

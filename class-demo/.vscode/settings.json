@@ -4,6 +4,8 @@
         "iostream": "cpp",
         "limits": "cpp",
         "numeric": "cpp",
-        "climits": "cpp"
+        "climits": "cpp",
+        "istream": "cpp",
+        "*.tcc": "cpp"
     }
 }
