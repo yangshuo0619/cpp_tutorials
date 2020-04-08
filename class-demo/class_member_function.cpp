@@ -10,7 +10,7 @@ class Box
 	double height;
 	
 	double getVolume(void);
-	void setLength(double len);
+	void setLength(double len);//在函数参数的定义中声明的变量，称为形式参数
 	void setBreadth(double bre);
 	void setHeight(double hei);;
 };

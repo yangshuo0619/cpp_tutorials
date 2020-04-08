@@ -4,6 +4,8 @@ using namespace std;
 
 int main()
 {
+
+  //在函数或一个代码块内部声明的变量，称为局部变量。
   int a,b;
   int c;
 
