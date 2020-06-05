@@ -52,6 +52,8 @@ using namespace std;
   
 int main()  
 {  
+
+    #if 0
     cout << "type: \t\t" << "************size**************"<< endl;  
     cout << "bool: \t\t" << "所占字节数：" << sizeof(bool);  
     
@@ -99,5 +101,25 @@ int main()
     cout << "string: \t" << "所占字节数：" << sizeof(string) << endl;  
     // << "\t最大值：" << (numeric_limits<string>::max)() << "\t最小值：" << (numeric_limits<string>::min)() << endl;  
     cout << "type: \t\t" << "************size**************"<< endl;  
+    
+    #endif
+
+    unsigned char c = -1;
+    std::cout << int(c) << std::endl;//255
+
+    unsigned char c1 = 10;
+    signed char c2 = 127;
+    std::cout << c1+c2 <<std::endl;//unsigned + signed = unsigned
+    std::cout << c2+c1 <<std::endl;
+
+
+    unsigned short int i1 = 100;
+    signed short int i2 = 32767; 
+    std::cout << i1 + i2 << std::endl;
+
+    unsigned int i3 = 100;
+    signed int i4 = 2147483647; 
+    std::cout << i3 + i4 << std::endl;////unsigned + signed = unsigned
+
     return 0;  
 }

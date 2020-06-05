@@ -7,6 +7,6 @@ int main()
 {
     unique_ptr<int> pInt(new int(5));
     cout<<*pInt<<endl;
-    
+
 
 }
