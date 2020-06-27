@@ -25,6 +25,7 @@ Line::Line(double len)
     cout << *ptr << endl<<endl;
 }
  
+// 成员函数定义，拷贝构造函数 
 Line::Line(const Line &obj)
 {
     cout << "调用拷贝构造函数 init new object, 并为指针 ptr 分配内存" << endl;
