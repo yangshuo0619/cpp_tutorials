@@ -53,3 +53,8 @@ int main()
     cout << str << endl;  
     return 0;  
 }
+
+/*
+死循环：
+for(;;){}
+ */

@@ -22,3 +22,9 @@ int main ()
  
    return 0;
 }
+
+/*
+死循环：
+while(1)
+{} 
+*/
