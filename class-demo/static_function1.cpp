@@ -5,7 +5,7 @@ using namespace std;
 class Box
 {
   public:
-    //static memeber variables
+    //static memeber variables，静态变量
     static int objectCount;
     
     Box(double l = 2,double b = 2,double h = 2)
@@ -24,7 +24,7 @@ class Box
       return length * breadth * height;
     }
 
-    //static member function
+    //static member function，静态函数 
     //usage: ClassName::function()
     static int getCount()
     {
