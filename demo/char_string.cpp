@@ -43,6 +43,7 @@ int main()
     char str1[] = "hello"; 
     char str2[] = "world";
     char str3[11];
+    
     int len;
 
     // 复制 str1 到 str3,str3 是输出
@@ -59,6 +60,8 @@ int main()
     string s_a = "TEST";
     string s_b = "string";
     string s_c;
+    string s_d = "hello kitty";//string s_d{"hello kitty"};需要-std=c++11
+    
     int len_s;
     
     //复制
@@ -66,7 +69,8 @@ int main()
     cout << s_c << endl;
     s_c = s_a + s_b;
     cout << s_c << endl;;
-    
+    cout << s_d << endl;
+
     len = s_c.size();
     cout << "s_c.size() : " << len << endl;
 
