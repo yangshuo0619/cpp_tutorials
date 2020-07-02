@@ -1,3 +1,5 @@
+//析构函数是为了在对象不被使用之后释放他的资源
+
 #include<iostream>
 
 using namespace std;
