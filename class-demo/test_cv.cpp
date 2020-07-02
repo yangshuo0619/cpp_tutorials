@@ -56,5 +56,5 @@ TEST(YImg, copy)
     mempcpy(mat_dst.data, yimg_dst.data(), yimg_dst.size().area());
 
     cv::imshow("YImg copy test", mat_dst);
-    cv::waitKey(1000);
+    cv::waitKey(1000);mempcpy()
 }

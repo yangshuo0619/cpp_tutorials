@@ -8,7 +8,10 @@ using namespace std;
 #define LENGTH 10   
 #define WIDTH  5
 #define NEWLINE '\n'
- 
+
+//用define声明一个常数，用以表明一年中有多少秒
+#define SECONDS_PER_YEAR (60x60x365)UL //UL表示无符号长整型
+
 int main()
 {
  

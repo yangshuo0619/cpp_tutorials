@@ -87,13 +87,13 @@ int main()
     cout << "**ipp = " << **ipp << endl << endl;//值为var1
     
 
-    //指向常量的指针 pointer to const
+    //常量指针 pointer to const
     const double pi = 3.1415;
     const double *pointer_pi = &pi;
     // *pointer_pi = 9; error *pointer_pi const double
 
 
-    //常量指针 const pointer
+    //指针常量 const pointer
     double num = 0;
     double *const const_pointer = &num;
     *const_pointer = 1;
@@ -102,6 +102,7 @@ int main()
     //用指针赋值
     char a[] = "hello ,world";//字符数组
     char * p = a; //字符指针，初始化指向数组a首，a的第一个元素地址。
+    
     printf("%c \n",*(p+4)); //o
     printf("%c \n", p[4]);//o
     printf("%c \n",a[4]);//o
@@ -117,7 +118,7 @@ int main()
                                    //即&a+sizeof(a) = &a + 5*sizeof(int);即a[5].指针已越界。
                                    //（int*)把上步计算出的地址转化为int*,赋值给plist.
 
-    printf("%d \n",*(list+1) );//2; a 与&a 的地址是一样的，但a是数组首地址。即a[0]的地址.而&a是对象首地址。
+    printf("%d \n",*(list+1) );//2; a 与&a 的地址是一样的，但a是数组首地址。即a[0]的地址.而&a是对象首地址。!!!!
                                //   a + 1是数组下一个元素的地址，即a[1];&a + 1是下一个对象的地址，即a[5];
     printf("%d \n",*(plist-1));//5
     
@@ -151,6 +152,20 @@ int main()
     strcpy(str1,"hello");//error. str1指向一个字节大小的内存区。复制“hello"字符串最少要6个字节。！！！
                          //内存大小不够。会因为越界进行内存读写而导致程序崩溃。
     str2[1] = 'b';//error。 str2指向一个字符串常量，所以对其赋值是违法的。                            
+    
+
+    //常量指针和指针常量
+    char cp = 'a';
+    char* const p1 = &cp; //指针常量,必须要初始化。他本身不能被修改，指向的内容可以被修改。
+    char const * p2;//常量指针。 本身可以被修改，指向的内容不能被修改。
+    const char *p3;//常量指针 
+    const char * const p4 = &cp;//本身是常量，指向的内容也不能被修改。
+
+
+    //访问特定位置的内存:设置一绝对地址0x67a9的整型变量的值为0xaa66
+    int *ptr;
+    ptr = (int*) 0x67a9;
+    *ptr = 0xaa66;
     
     return 0;
 

@@ -24,8 +24,9 @@ const char *strstr(const char* src, const char* sub)
             }
         }
         
-        while(*bp++ == *sp++);
-            src += 1;
+        while(*bp++ == *sp++);//bp是src的字串，bp和sp的每个字符挨个比较
+
+        src += 1;//src后移到下一个位置
      
      }
      return NULL;
@@ -33,8 +34,8 @@ const char *strstr(const char* src, const char* sub)
 
 int main()
 {
-    char p[] = "12345";
-    char q[] = "34";
+    char p[] = "string"; 
+    char q[] = "t";
     const char *r = strstr(p,q);
     printf("r: %s \n",r);
 

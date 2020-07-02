@@ -35,3 +35,10 @@ int main()
   cout << "a volume: " << volume << endl;
   return 0;
 }
+
+/*
+与struct的区别
+C语言：struct 只是一种复杂数据类型定义，不能用于面向对对象编程。
+C++语言：对于成员访问权限及继承方式：class默认是private,struct是public的。
+        class可以用于表示模板类型，struct不行。
+ */

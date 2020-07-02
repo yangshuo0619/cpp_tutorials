@@ -48,5 +48,28 @@ int main()
    printf("%d \n",p);
    printf("%d \n",q);
    
+
+   //demo4:使用位运算交换a,b两个数。(进行三次异或运算)
+   int a = 3;
+   int b = 5;
+
+   a ^= b;
+   b ^= a;//b已经为a;
+   a ^= b;//a已经为b;
+
    return 0;
 }
+
+ //demo3:设置或清除特定的位
+ //给定一个整型变量a,一个设置a的bit3,第二个清楚a的bit3.保持其他位不变。
+   #define BIT3 (0x1 << 3)
+   static int a;
+   void set_bits3(void)
+   {
+      a |= BIT3;//a = a|BIT3;按位或：可将某些位 置1.
+   }
+  
+   void clear_bit3(void)
+   {
+      a &= ~BIT3;//a = a & ~BIT3;按位与:将某些位 置0。 ~BIT3,按位取反.
+   }
