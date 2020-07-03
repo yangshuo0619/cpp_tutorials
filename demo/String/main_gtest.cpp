@@ -1,9 +1,9 @@
+#include"String.h"
+#include<gtest/gtest.h>
 #include<iostream>
-#include "String.h"
 
-using namespace std;
 
-int main(void)
+TEST(String,constructor)
 {
     String str1;
     String str2(3,'A');
@@ -14,8 +14,14 @@ int main(void)
     cout << "str2 = " << str2 << endl;
     cout << "str3 = " << str3 << endl;
     cout << "str4 = " << str4 << endl;
+}
 
-    str1 = "test";
+TEST(String,operator)
+{
+    String str1 = "test";
+    String str2 = "with gtest";
+    String str3 = "string";
+
     cout << "str1 = " << str1 << endl;
     str1 = str3;
     cout << "str1 = " << str1 << endl;
@@ -36,11 +42,19 @@ int main(void)
     String t3 = "12345";
     String t4 = "12335";
 
-    cout << "t1 == t2 ? " << (t1 == t2) << endl;
-    cout << "t1 < t3 ? " << (t1 < t3) << endl;
-    cout << "t1 > t4 ? " << (t1 > t4) << endl;
-    cout << "t3 != t4 ? " << (t1 != t4) << endl;
+    // cout << "t1 == t2 ? " << (t1 == t2) << endl;
+    // cout << "t1 < t3 ? " << (t1 < t3) << endl;
+    // cout << "t1 > t4 ? " << (t1 > t4) << endl;
+    // cout << "t3 != t4 ? " << (t1 != t4) << endl;
 
-    return 0;
+    EXPECT_TRUE(t1 == t2);
+    EXPECT_TRUE(t1 < t3);
+    EXPECT_TRUE(t1 > t4);
+    EXPECT_TRUE(t1 != t4);
+}
 
+int main(int argc, char ** argv)
+{
+    testing::InitGoogleTest(&argc,argv);
+    return RUN_ALL_TESTS();
 }

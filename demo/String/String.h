@@ -9,6 +9,7 @@ using namespace std;
 
 class String
 {
+public:
     String();
     String(int n,char c);
     String(const char* source);
@@ -16,7 +17,7 @@ class String
     ~String();
 
     String& operator = (char *s);//重载=，实现字符串赋值
-    String& operator = (String &s);//重载=，实现对象赋值
+    String& operator = (const String &s);//重载=，实现对象赋值
 
     
     char& operator[](int i);//重载[],实现数组运算
@@ -32,11 +33,11 @@ class String
     friend bool operator == (const String& left, const String& right);
     friend bool operator != (const String& left, const String& right);
     char* getData();
+    int length();
 
-
-    private:
-        int size;
-        char* data;
+private:
+    int size;
+    char* data;
 };
 
 #endif
