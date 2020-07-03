@@ -4,13 +4,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<malloc.h>
+
 typedef struct LNode{
-    int          data;
+    int data;
     struct LNode *next;
-}LNode,*LinkList; //LNOde = struct LNode 
+}LNode, *LinkList; // LNOde = struct LNode 
  
-LinkList CreateList(int n);//declare
-void print(LinkList h);
+LinkList CreateList(int n);//声明创建链表
+void print(LinkList h);//打印链表
 
 int main()
 {
@@ -34,32 +35,32 @@ LinkList CreateList(int n)
 {
     LinkList L,p,q;
     int i;
-    L=(LNode*)malloc(sizeof(LNode));
-    if(!L)return 0;
-    L->next=NULL;
-    q=L;
-    for(i=1;i<=n;i++)
+    L = (LNode*)malloc(sizeof(LNode));//分配内存
+    
+    if(!L) return 0;
+    L -> next = NULL;
+    q = L;
+    
+    for(i = 1; i <= n; i++)
     {
-        p=(LinkList)malloc(sizeof(LNode));
+        p = (LinkList)malloc(sizeof(LNode));
         printf("请输入第%d个元素的值:",i);
-        scanf("%d",&(p->data));
-        p->next=NULL;
-        q->next=p;
-        q=p;
+        scanf("%d",&(p -> data));
+        p -> next = NULL;
+        q -> next = p;
+        q = p;
     }
     return L;
 }
+
 void print(LinkList h)
 {
-    LinkList p=h->next;
+    LinkList p = h->next;
     while(p!=NULL){
         printf("%d ",p->data);
         p=p->next;
     }
 }
-
-
-
 
 
 
@@ -70,6 +71,7 @@ typedef struct node
     node* next;
 }node;
 
+
 //create single linked list
 node *create()
 {
@@ -79,8 +81,8 @@ node *create()
     head =  (node*)malloc(sizeof(node));
 
 
-while(1)
-{
+    while(1)
+    {
     printf("input the data: ");
     scanf("%d",&x);
     if(x = 0)
@@ -99,7 +101,7 @@ while(1)
     }
 
     q = p;
-}
+    }
 
 q->next = NULL;
 return head;    
