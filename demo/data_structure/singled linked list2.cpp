@@ -165,10 +165,14 @@ node *search_node(node *head,int pos)
 
     while(--pos)
     {
-        if((p = p->next))
-
+        if((p = p->next) == NULL)
+        {
+            printf("incorrect position to search node \n");
+            break;
+        }
     }
 
+    return p;
 }
 
 //insert node
@@ -192,5 +196,27 @@ node *insert_node(node *head, int pos,int data)
     }
     return head;
     
+}
+
+//delete node
+node *delete_node(node *head,int pos)
+{
+    node *item = NULL;
+    node *p = head -> next;
+    if(p == NULL)
+    {
+        printf("link is empty.\n");
+        return NULL;
+    }
+  
+    p = search_node(head,pos-1);
+    if(p != NULL && p->next != NULL)
+    {
+        item = p->next;
+        p->next = item->next;
+        delete item;
+    }
+
+    return head;
 }
 
