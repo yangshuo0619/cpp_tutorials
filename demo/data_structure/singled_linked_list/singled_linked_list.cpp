@@ -158,18 +158,19 @@ node *reverse(node *head)
         return head;
     }
 
-    p = head->next; //第一个节点?
-    q = p->next;//保存第二个节点
+    p = head->next; //第一个节点first
+    q = p->next;//保存第二个节点second
     p->next = NULL;//将第一个节点设为末节点
 
     while(q != NULL)
     {
-        r = q->next;//下一个结点
+        r = q->next;//先保存下一个结点
         q->next = p;//指针翻转
-        p = q;//指针向后遍历
-        q = r;
+        p = q;//向后遍历
+        q = r;//向后遍历
     }
     head->next = p;//设第一个节点为原来最后的一个节点
     return head;
 
 }
+
