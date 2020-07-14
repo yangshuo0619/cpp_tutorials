@@ -1,26 +1,13 @@
-/*
-队列的实现可以用链表 和 数组。
-以下3为单链表：
- */
-
-typedef struct _Node
-{
-    int data;
-    struct _Node *next;
-} node; //单链表,node表示队列中的每个节点元素
-
-typedef struct _Queue
-{
-    node *front;//队头
-    node *rear;//对尾
-} MyQueue;
+#include"queue.h"
+#include<stdio.h>
+#include<memory>
 
 //构造空的队列
 MyQueue *CreatMyQueue()
 {
-    MyQueue *q = (MyQueue*)malloc(sizeof(MyQueue));
-    q->front = NULL;
-    q->rear = NULL;
+    MyQueue *q  = (MyQueue*)malloc(sizeof(MyQueue));
+    q->front = NULL;//空队列，队首指针置空
+    q->rear = NULL;//队尾指针置空
     return q;
 }
 
@@ -47,18 +34,19 @@ MyQueue *endqueue(MyQueue *q, int data)
 MyQueue *dequeue(MyQueue* q)
 {
     node *pnode = NULL;
-    pnode = q->front;//
+    pnode = q->front;//指向队头，就是即将删除的指针
     
-    if()
+    if(pnode == NULL)
     {
-
+        printf("empty queue! \n");
     }
     else
-    {
+    {   
+        //把队头结点往后移，删除原来的队头节点。如果删除后的队列为空，则把rear置空
         q->front = q->front->next;//新队头
-        if(q->front == NULL)
+        if(q->front == NULL)//当只有一个节点，删除后，队列为空
         {
-            q->rear = NULL;
+            q->rear = NULL;//对rear置空
         }
     free(pnode);
     }
@@ -66,6 +54,39 @@ MyQueue *dequeue(MyQueue* q)
 }
 
 
+//遍历一次队列中的节点即可。
+int GetLength(MyQueue *q)
+{
+    int nlen = 0;
+    node * pnode = q->front;//首节点 指向队头
+    if(pnode != NULL)
+    {
+        nlen = 1;
+    }
+    while(pnode !=  q->rear)//遍历队列/且注意不是pnode!=NULL. 因为队尾有可能指向的不是链表的末节点
+    {    
+        pnode = pnode->next;
+        nlen++;//循环一次 nlen递增1
+    }
+    return nlen;
+}
 
+//打印
+void PrintMyQueue(MyQueue *q)
+{
+    node *pnode = q->front;
+    if(pnode == NULL)//如果队列为空
+    {
+        printf("empty queue. \n");
+        return;
+    }
+    printf("data:");
+    while(pnode != q->rear)//遍历队列
+    {
+        printf("%d",pnode->data);//打印节点数据
+        pnode = pnode->next;
+    }
+    printf("%d",pnode->data);//打印尾节点数据
+}
 
 
