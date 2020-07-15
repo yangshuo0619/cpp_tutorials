@@ -9,7 +9,7 @@ class MyQueue
         void enqueue(MyData data);//入队
         void dequeue(MyData &data);//出队
         bool IsEmpty();//判空
-    private:
+    private: 
         MyStack s1;//用于入队
         MyStack s2;//用于出队
 };
