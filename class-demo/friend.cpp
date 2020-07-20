@@ -4,10 +4,11 @@ using namespace std;
 
 class Box
 {
-  double width;
 public:
   friend void printWidth(Box box);
   void setWidth(double wid);
+private:
+  double width;
 };
 
 void Box::setWidth(double wid)

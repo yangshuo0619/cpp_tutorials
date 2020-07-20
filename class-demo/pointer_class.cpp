@@ -31,7 +31,7 @@ int main()
   Box box2(3,2,4);
   Box *ptrBox;
 
-  ptrBox=&box1;
+  ptrBox = &box1;
   
   cout<<"**********"<<endl;
  // cout<<"box1: "<<box1<<endl;
